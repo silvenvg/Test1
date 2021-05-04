@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "ContentVersion": "1.0.0.0",
+  "Parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "West-Europe",
+      "allowedValues": { "description": "West-Europe" }
+    },
+    "resourceGroupPrefix": {
+      "type": "string",
+      "minLength": 3,
+      "metaData": { "description": "Primary name for resourcegroup" }
+    }
+  },
+  "resources": {
+    "name": "[concat(parameter('resourceGroupPrefix'),'-',copyIndex())]",
+    "type": "Microsoft.Resources/resourceGroups",
+    "apiVersion": "2020-06-01",
+    "location": "(parameter('location'))",
+    "properties": {}
+  }
+
+}

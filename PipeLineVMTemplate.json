@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "ContentVersion": "1.0.0.0",
+  "Parameters": {
+    "adminUsername": {
+      "type": "string",
+      "metadata": { "description": "Username for the VM" }
+    },
+
+    "adminPassword": {
+      "type": "securestring",
+      "minLength": 12,
+      "metaData": { "description": "Password for VM, containing at least 12 characters" }
+    },
+    "PublicIpSky": {
+      "type": "string",
+      "defaultValue": "Basic",
+      "allowedValues": [ "basic" ],
+      "metaData": { "description": "SKU for public IP" }
+    },
+    "OSVersion": {
+      "type": "string",
+      "defaultValue": "2019-Datacenter",
+      "allowedValues": [
+        "2019-Datacenter",
+        "2016-Datacenter"
+      ],
+      "metadata": { "description": "OS version for VM" }
+    },
+    "vmSize": {
+      "type": "string",
+      "defaultValue": "standard_DS1_v2",
+      "allowedValues": [ "standard_DS1_v2" ],
+      "metaData": { "description": "Size of VM" }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "West-Europe"
+    },
+    "vmName": {
+      "type": "string",
+      "defaultValue": "pipeline-agent",
+      "metaData": { "description": "name of vm" }
+    }
+
+
+
+  },
+
+  "variables": {
+    "ResourceId": ""
+  }
+
+}
